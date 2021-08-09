@@ -1,6 +1,6 @@
 {
-  "name": "sleep-app",
-  "version": "0.1.0",
+  "name": "react-typescript-scss-template",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "chart.js": "^2.9.4",

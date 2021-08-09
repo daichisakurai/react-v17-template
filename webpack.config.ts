@@ -44,11 +44,13 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.json']
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname, 'dist'),
+    //port: 3000
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
+      //favicon: path.resolve(__dirname, 'src/favicon.ico'),
       filename: 'index.html'
     })
   ],
