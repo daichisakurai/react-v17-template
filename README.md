@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# What's this?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React17 + Typescript + CSS Module(SCSS) template
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+### Require
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Node.js 14以上
+* npm 6以上
+* VSCode
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Set Up
 
-### `yarn build`
+```
+npm i
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Npm Script
 
-### `yarn eject`
+| コマンド           | 内容                                           |
+| ------------------ | ---------------------------------------------- |
+| `npm run build`    | プロダクションビルド                           |
+| `npm run dev`      | 開発用ローカルサーバの起動(localhost:8080)     |
+| `npm run lint`     | 静的解析の実行(src配下の`.ts`, `.tsx`ファイル) |
+| `npm run lint:fix` | 静的解析 + 自動修正                            |
+| `npm run format`   | フォーマット(src配下)                          |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Directories
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### src/
 
-## Learn More
+* index.tsx・・・jsのエントリポイント、Appコンポーネントもまとめています。
+* index.html・・・初期配信されるhtml。`<div id="app"></div>`内にReactがレンダリングする設定。metaタグ等はこちらで。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### src/components/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ボタンなどのコンポーネントはこの配下へ。新たにディレクトリを切ってもOKです。
+
+#### src/pages/
+
+`react-router-dom`で表示切替するpagesなコンポーネントはこちらへ。
+
+#### src/hooks/
+
+カスタムHooksが必要になったらこちらに定義してください。
+
+#### src/contexts/
+
+Context APIで使用したいContextはここに作成してください。
+
+#### src/images/
+
+画像置き場。一緒にビルドされます。
+
+#### src/types/
+
+* scss.d.ts・・・`.scss`ファイルをTypescriptにimportする際に必要な型定義。本当はファイルごとに細かく型定義をしたほうが補完が効いていいのですが、ひとまずこうしています。
+* image.d.ts・・・画像
+
+その他、グローバルな型定義ファイルが必要になった場合はこちらへ。
+
+#### dist/
+
+ビルド結果はここに格納されます。
+
+#### (root)/
+
+* eslintrs.js・・・ESLintの設定ファイルです。
+* .gitignore・・・Git上でトラッキングしないファイルの一覧です。
+* .prettierrc・・・Prettierの設定ファイルです。
+* package-lock.json・・・依存パッケージのバージョン管理ファイルです。
+* package.json・・・プロジェクトの基本情報、npmスクリプト、直接依存するパッケージの一覧が記載されたファイルです。
+* tsconfig.json・・・Typescriptの設定ファイルです。
+* webpack.config.ts・・・webpackの設定ファイルです。
